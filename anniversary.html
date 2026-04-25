@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary Celebrations | Shiv Arts & Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --gold-color: #D4AF37; --dark-bg: #000000; }
+        body { background-color: var(--dark-bg); color: #fff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
+
+        /* Navbar */
+        .navbar { background-color: #0a0a0a !important; border-bottom: 2px solid var(--gold-color); padding: 10px 50px; }
+        .navbar-brand img { height: 50px; filter: drop-shadow(0 0 5px var(--gold-color)); }
+        .nav-link { color: var(--gold-color) !important; font-weight: 600; text-transform: uppercase; margin: 0 12px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: #ffffff !important; text-shadow: 0 0 8px var(--gold-color); }
+        
+        .dropdown-menu { background-color: #0a0a0a; border: 1px solid var(--gold-color); }
+        .dropdown-item { color: var(--gold-color); font-weight: 600; text-transform: uppercase; }
+        .dropdown-item:hover { background-color: var(--gold-color); color: #000; }
+
+        /* Anniversary Header */
+        .anniversary-header { padding: 80px 0 30px; text-align: center; }
+        .gold-heading { color: var(--gold-color); font-weight: 800; letter-spacing: 4px; font-size: 3rem; text-transform: uppercase; }
+        
+        /* Slideshow */
+        .slideshow-section { padding: 30px 0; }
+        .carousel-item { height: 500px; }
+        .carousel-item img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; }
+
+        /* Content */
+        .content-section { padding: 60px 0; text-align: center; }
+        .gold-border-box { border: 2px solid var(--gold-color); padding: 40px; border-radius: 20px; background-color: #0a0a0a; }
+        .btn-gold { background: var(--gold-color); color: #000; font-weight: 700; padding: 12px 30px; border-radius: 50px; transition: 0.3s; }
+        .btn-gold:hover { background: #fff; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="logo.jpeg" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Our Events</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="wedding.html">Wedding Planning</a></li>
+                            <li><a class="dropdown-item" href="birthday.html">Birthdays</a></li>
+                            <li><a class="dropdown-item active" href="anniversary.html">Anniversaries</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="anniversary-header">
+        <h1 class="gold-heading">Anniversary Celebrations</h1>
+        <div style="width: 100px; height: 3px; background: var(--gold-color); margin: 20px auto;"></div>
+    </header>
+
+    <section class="slideshow-section">
+        <div class="container">
+            <div id="anniversarySlideshow" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="1000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active"><img src="https://images.unsplash.com/photo-1622987636441-cf0ba0fdbfbd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGFubml2ZXJzYXJ5JTIwREVDT1JBVElPfGVufDB8fDB8fHww" alt="Anniversary Decor"></div>
+                    <div class="carousel-item"><img src="https://images.unsplash.com/photo-1621903992255-89dd93ea69ff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YW5uaXZlcnNhcnklMjBERUNPUkFUSU98ZW58MHx8MHx8fDA%3D" alt="Private Dinner"></div>
+                    <div class="carousel-item"><img src="https://images.unsplash.com/photo-1733515371242-2c7f8255fde6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFubml2ZXJzYXJ5JTIwRVZFTlR8ZW58MHx8MHx8fDA%3D" alt="Celebration Setup"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section container">
+        <div class="gold-border-box">
+            <div style="font-size: 3rem; color: var(--gold-color);">🥂</div>
+            <h2 style="color: var(--gold-color);">Celebrate Your Journey</h2>
+            <p class="mt-4 text-secondary lead">Whether it's your first year or your silver jubilee, we curate intimate and grand anniversary celebrations that reflect your beautiful journey together.</p>
+            <a href="contact.html" class="btn btn-gold mt-4">BOOK YOUR ANNIVERSARY</a>
+        </div>
+    </section>
+
+    <footer style="background-color: #0a0a0a; border-top: 2px solid #D4AF37; padding: 50px 0 20px; color: #fff; margin-top: 80px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h4 style="color: #D4AF37; font-weight: 800; text-transform: uppercase;">SHIV ARTS & EVENTS</h4>
+                <p class="text-secondary mt-3">Creating magical moments with elegance. We bring your vision to life with our expert planning and design.</p>
+            </div>
+            
+            <div class="col-md-4 mb-4 text-center">
+                <h5 style="color: #D4AF37; text-transform: uppercase; margin-bottom: 20px;">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-white text-decoration-none hover-gold">Home</a></li>
+                    <li><a href="gallery.html" class="text-white text-decoration-none hover-gold">Gallery</a></li>
+                    <li><a href="contact.html" class="text-white text-decoration-none hover-gold">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-md-4 mb-4 text-md-end">
+                <h5 style="color: #D4AF37; text-transform: uppercase; margin-bottom: 20px;">Stay Connected</h5>
+                <p class="mb-1">Kanpur, Uttar Pradesh</p>
+                <p class="mb-1">info@shivarts.com</p>
+            </div>
+        </div>
+        
+        <hr style="border-color: #333; margin: 30px 0;">
+        
+        <div class="text-center">
+            <p class="text-secondary small">&copy; 2026 Shiv Arts & Events. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .hover-gold:hover { color: #D4AF37 !important; transition: 0.3s; }
+</style>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

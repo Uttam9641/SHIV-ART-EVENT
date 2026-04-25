@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Planning | Shiv Arts & Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* --- BRAND THEME (BLACK & GOLD) --- */
+        :root { --gold-color: #D4AF37; --dark-bg: #000000; }
+        body { background-color: var(--dark-bg); color: #fff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
+
+        /* --- NAVIGATION (Same as Index) --- */
+        .navbar { background-color: #0a0a0a !important; border-bottom: 2px solid var(--gold-color); padding: 10px 50px; }
+        .navbar-brand img { height: 50px; filter: drop-shadow(0 0 5px var(--gold-color)); }
+        .nav-link { color: var(--gold-color) !important; font-weight: 600; text-transform: uppercase; margin: 0 12px; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: #ffffff !important; text-shadow: 0 0 8px var(--gold-color); }
+        
+        /* Dropdown Styling */
+        .dropdown-menu { background-color: #0a0a0a; border: 1px solid var(--gold-color); }
+        .dropdown-item { color: var(--gold-color); font-weight: 600; text-transform: uppercase; }
+        .dropdown-item:hover { background-color: var(--gold-color); color: #000; }
+
+        /* --- WEDDING PAGE HEADER --- */
+        .wedding-header { padding: 100px 0 50px; text-align: center; }
+        .gold-heading { color: var(--gold-color); font-weight: 800; letter-spacing: 4px; font-size: 3rem; text-transform: uppercase; }
+        .gold-underline { width: 120px; height: 4px; background: var(--gold-color); margin: 20px auto; }
+
+        /* --- AUTOMATIC IMAGE SLIDESHOW SECTION --- */
+        .slideshow-section { padding: 50px 0; }
+        .carousel-item { height: 500px; /* Adjust height as needed */ }
+        .carousel-item img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* Premium Fade Effect for the slideshow */
+        .carousel-fade .carousel-item { opacity: 0; transition-duration: 0.8s; transition-property: opacity; }
+        .carousel-fade .carousel-item.active { opacity: 1; }
+
+        /* Control Buttons styling */
+        .carousel-control-prev-icon, .carousel-control-next-icon { filter: drop-shadow(0 0 5px var(--gold-color)); }
+
+        /* --- CONTENT SECTION --- */
+        .content-section { padding: 80px 0; }
+        .gold-border-box { border: 2px solid var(--gold-color); padding: 50px; border-radius: 20px; text-align: center; background-color: #0a0a0a; }
+        .icon-box { font-size: 3rem; color: var(--gold-color); margin-bottom: 20px; }
+        .btn-gold { background: var(--gold-color); color: #000; font-weight: 700; padding: 12px 30px; border-radius: 50px; transition: 0.3s ease; }
+        .btn-gold:hover { background: #fff; box-shadow: 0 0 15px var(--gold-color); }
+
+        /* --- FOOTER (Same as Index) --- */
+        footer { padding: 40px 0; background: #0a0a0a; border-top: 1px solid #222; text-align: center; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .gold-heading { font-size: 2rem; }
+            .carousel-item { height: 300px; }
+            .gold-border-box { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.jpeg" alt="Shiv Arts Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Our Events</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="wedding.html">Wedding Planning</a></li>
+                            <li><a class="dropdown-item" href="#">Corporate Events</a></li>
+                            <li><a class="dropdown-item" href="#">Birthdays</a></li>
+                            <li><a class="dropdown-item" href="#">Anniversaries</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="wedding-header">
+        <div class="container">
+            <h1 class="gold-heading">Wedding Planning</h1>
+            <div class="gold-underline"></div>
+            <p class="text-secondary lead">Creating Timeless Moments of Your Love Story</p>
+        </div>
+    </header>
+
+    <section class="slideshow-section">
+        <div class="container">
+            <div id="weddingSlideshow" class="carousel slide carousel-fade shadow-lg" data-bs-ride="carousel" data-bs-interval="1000">
+                <div class="carousel-inner" style="border-radius: 20px;">
+                    
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1625076932159-61a032e2b7ad?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Exquisite Floral Wedding Decor">
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1729237261091-bae8eba0c60c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2VkZGluZyUyMGV2ZW50fGVufDB8fDB8fHww" alt="Luxury Wedding Stage Design">
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1524824267900-2fa9cbf7a506?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d2VkZGluZyUyMGV2ZW50fGVufDB8fDB8fHww" alt="Grand Wedding Entrance Setup">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1439539698758-ba2680ecadb9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdlZGRpbmclMjBldmVudHxlbnwwfHwwfHx8MA%3D%3D" alt="Timeless Anniversary Theme">
+                    </div>
+                </div>
+                
+                <button class="carousel-control-prev" type="button" data-bs-target="#weddingSlideshow" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#weddingSlideshow" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="gold-border-box">
+                <div class="icon-box">💍</div>
+                <h2 style="color: var(--gold-color); text-transform: uppercase;">Your Dream, Our Craft</h2>
+                <p class="mt-4 text-secondary lead">
+                    From luxury venue selection to exquisite floral decor and conceptual lighting, 
+                    Shiv Arts & Events ensures your wedding is nothing short of a fairy tale. 
+                    We manage the logistics so you can handle the romance.
+                </p>
+                <a href="contact.html" class="btn btn-gold mt-5">BOOK A CONSULTATION</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color: #0a0a0a; border-top: 2px solid #D4AF37; padding: 50px 0 20px; color: #fff; margin-top: 80px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h4 style="color: #D4AF37; font-weight: 800; text-transform: uppercase;">SHIV ARTS & EVENTS</h4>
+                <p class="text-secondary mt-3">Creating magical moments with elegance. We bring your vision to life with our expert planning and design.</p>
+            </div>
+            
+            <div class="col-md-4 mb-4 text-center">
+                <h5 style="color: #D4AF37; text-transform: uppercase; margin-bottom: 20px;">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-white text-decoration-none hover-gold">Home</a></li>
+                    <li><a href="gallery.html" class="text-white text-decoration-none hover-gold">Gallery</a></li>
+                    <li><a href="contact.html" class="text-white text-decoration-none hover-gold">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-md-4 mb-4 text-md-end">
+                <h5 style="color: #D4AF37; text-transform: uppercase; margin-bottom: 20px;">Stay Connected</h5>
+                <p class="mb-1">Kanpur, Uttar Pradesh</p>
+                <p class="mb-1">info@shivarts.com</p>
+            </div>
+        </div>
+        
+        <hr style="border-color: #333; margin: 30px 0;">
+        
+        <div class="text-center">
+            <p class="text-secondary small">&copy; 2026 Shiv Arts & Events. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .hover-gold:hover { color: #D4AF37 !important; transition: 0.3s; }
+</style>
+</style>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

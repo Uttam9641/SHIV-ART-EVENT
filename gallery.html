@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Gallery | Shiv Arts & Events - Best Event Decorators</title>
+    <meta name="description" content="Explore our masterpiece gallery of Royal Weddings, Grand Anniversaries, Theme Birthdays, and Corporate Events. Shiv Arts & Events - Making your moments magical.">
+    <meta name="keywords" content="Shiv Arts, Event Management, Wedding Decor, Birthday Party, Corporate Events, Anniversary Decoration">
+    <meta name="author" content="Shiv Arts & Events">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* --- BRAND THEME (BLACK & GOLD) --- */
+        :root {
+            --gold-color: #D4AF37;
+            --dark-bg: #000000;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION --- */
+        .navbar {
+            background-color: #0a0a0a !important;
+            border-bottom: 2px solid var(--gold-color);
+            padding: 10px 50px;
+        }
+        .navbar-brand img {
+            height: 60px;
+            filter: drop-shadow(0 0 5px var(--gold-color));
+        }
+        .nav-link {
+            color: var(--gold-color) !important;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 12px;
+            transition: 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #ffffff !important;
+            text-shadow: 0 0 8px var(--gold-color);
+        }
+
+        /* --- GALLERY HEADER --- */
+        .gallery-header {
+            padding: 100px 0 50px;
+            text-align: center;
+        }
+        .gold-heading {
+            color: var(--gold-color);
+            font-weight: 800;
+            letter-spacing: 4px;
+            font-size: 3rem;
+            text-transform: uppercase;
+        }
+        .gold-underline {
+            width: 120px;
+            height: 4px;
+            background: var(--gold-color);
+            margin: 20px auto;
+        }
+
+        /* --- FILTER BUTTONS --- */
+        .filter-buttons {
+            margin-bottom: 60px;
+        }
+        .btn-filter {
+            background: transparent;
+            border: 2px solid var(--gold-color);
+            color: var(--gold-color);
+            padding: 10px 30px;
+            border-radius: 50px;
+            margin: 8px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+        .btn-filter:hover, .btn-filter.active {
+            background: var(--gold-color);
+            color: #000;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        /* --- GALLERY GRID --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 1px solid #333;
+            aspect-ratio: 1/1;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item.hide { display: none; }
+        .gallery-item.show { animation: fadeIn 0.5s ease; }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: 0.4s;
+        }
+
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+        .overlay-text {
+            color: var(--gold-color);
+            font-weight: 700;
+            border-bottom: 2px solid var(--gold-color);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            padding: 40px 0;
+            background: #0a0a0a;
+            border-top: 1px solid #222;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.jpeg" alt="Shiv Arts & Events Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="gallery-header">
+        <div class="container">
+            <h1 class="gold-heading">Event Gallery</h1>
+            <div class="gold-underline"></div>
+            <p class="text-secondary lead">Experience the Elegance of Shiv Arts & Events</p>
+            
+            <div class="filter-buttons mt-5" id="gallery-filters">
+                <button class="btn-filter active" data-filter="all">All</button>
+                <button class="btn-filter" data-filter="wedding">Weddings</button>
+                <button class="btn-filter" data-filter="anniversary">Anniversaries</button>
+                <button class="btn-filter" data-filter="birthday">Birthdays</button>
+                <button class="btn-filter" data-filter="corporate">Corporate</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="gallery-grid" id="gallery-items">
+            
+            <div class="gallery-item wedding">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600" alt="Royal Indian Wedding Decor Shiv Arts">
+                <div class="gallery-overlay"><span class="overlay-text">Royal Wedding</span></div>
+            </div>
+            <div class="gallery-item wedding">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=600" alt="Luxury Marriage Stage Decoration">
+                <div class="gallery-overlay"><span class="overlay-text">Floral Stage</span></div>
+            </div>
+            <div class="gallery-item wedding">
+                <img src="https://images.unsplash.com/photo-1761472606347-bfebc5a3e546?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8V0VERElORyUyMEVOVFJBTkNFJTIwREVDT1J8ZW58MHx8MHx8fDA%3D" alt="Grand Wedding Entrance Decor">
+                <div class="gallery-overlay"><span class="overlay-text">Grand Entry</span></div>
+            </div>
+
+            <div class="gallery-item anniversary">
+                <img src="data:image/jpeg;base64,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" alt="Silver Jubilee Anniversary Celebration">
+                <div class="gallery-overlay"><span class="overlay-text">Silver Jubilee</span></div>
+            </div>
+            <div class="gallery-item anniversary">
+                <img src="https://images.unsplash.com/photo-1699394317015-04257e98757c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fENPVVBMJTIwRElOTkVSfGVufDB8fDB8fHww" alt="Romantic Dinner Setup for Anniversary">
+                <div class="gallery-overlay"><span class="overlay-text">Private Dinner</span></div>
+            </div>
+            <div class="gallery-item anniversary">
+                <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=600" alt="Anniversary Party Night Shiv Arts">
+                <div class="gallery-overlay"><span class="overlay-text">Celebration Night</span></div>
+            </div>
+
+            <div class="gallery-item birthday">
+                <img src="https://images.unsplash.com/photo-1531956531700-dc0ee0f1f9a5?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kids Birthday Theme Decoration">
+                <div class="gallery-overlay"><span class="overlay-text">Kids Theme</span></div>
+            </div>
+            <div class="gallery-item birthday">
+                <img src="https://images.unsplash.com/photo-1530103043960-ef38714abb15?q=80&w=600" alt="Adult Birthday Party Decor">
+                <div class="gallery-overlay"><span class="overlay-text">Neon Party</span></div>
+            </div>
+            <div class="gallery-item birthday">
+                <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=600" alt="Balloon Decor Birthday Shiv Arts">
+                <div class="gallery-overlay"><span class="overlay-text">Balloon Decor</span></div>
+            </div>
+
+            <div class="gallery-item corporate">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=600" alt="Corporate Gala Dinner Event">
+                <div class="gallery-overlay"><span class="overlay-text">Gala Dinner</span></div>
+            </div>
+            <div class="gallery-item corporate">
+                <img src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Seminar Stage and Sound Setup">
+                <div class="gallery-overlay"><span class="overlay-text">Stage & Sound</span></div>
+            </div>
+            <div class="gallery-item corporate">
+                <img src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?q=80&w=600" alt="Conference Lighting Decor">
+                <div class="gallery-overlay"><span class="overlay-text">Annual Meet</span></div>
+            </div>
+
+        </div>
+    </section>
+
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const filterContainer = document.querySelector("#gallery-filters");
+        const galleryItems = document.querySelectorAll(".gallery-item");
+
+        filterContainer.addEventListener("click", (event) =>{
+            if(event.target.classList.contains("btn-filter")){
+                filterContainer.querySelector(".active").classList.remove("active");
+                event.target.classList.add("active");
+                const filterValue = event.target.getAttribute("data-filter");
+                
+                galleryItems.forEach((item) =>{
+                    if(item.classList.contains(filterValue) || filterValue === "all"){
+                        item.classList.remove("hide");
+                        item.classList.add("show");
+                    } else {
+                        item.classList.remove("show");
+                        item.classList.add("hide");
+                    }
+                });
+            }
+        });
+    </script>
+	<footer class="final-footer">
+    <div class="container">
+        <div class="row g-5">
+            
+            <div class="col-lg-4">
+                <div class="footer-brand mb-4">
+                    <img src="logo.jpeg" alt="Shiv Arts" class="footer-logo-img">
+                </div>
+                <p class="footer-desc">
+                    Shiv Arts & Events is a leading <strong>event management agency in Kanpur</strong>. We offer premium decoration and planning services to elevate your special moments globally.
+                </p>
+                <div class="tip-box">
+                    <div class="tip-header">
+                        <span class="tip-icon">💡</span> BONUS PLANNING TIP
+                    </div>
+                    <p class="tip-text">
+                        Book your venue at least 6 months in advance with Shiv Arts to get the best themes and 20% discount on floral decor.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <h5 class="footer-title">Quick Links</h5>
+                <ul class="footer-list">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6">
+                <h5 class="footer-title">Expertise</h5>
+                <ul class="footer-list">
+                    <li><a href="#">Wedding Decor</a></li>
+                    <li><a href="#">Birthday Themes</a></li>
+                    <li><a href="#">Corporate Events</a></li>
+                    <li><a href="#">Video Production</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-4">
+                <h5 class="footer-title">Connect</h5>
+                <div class="social-container">
+                    <a href="#" class="social-glow-icon ig">IG</a>
+                    <a href="#" class="social-glow-icon in">IN</a>
+                    <a href="#" class="social-glow-icon x">X</a>
+                    <a href="#" class="social-glow-icon fb">FB</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom-line mt-5">
+            <p>&copy; 2026 <strong>Shiv Arts & Events</strong>. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .final-footer {
+        background-color: #030303;
+        padding: 80px 0 30px;
+        color: #fff;
+        border-top: 1px solid #111;
+    }
+
+    .footer-logo-img {
+        height: 60px;
+        filter: drop-shadow(0 0 5px var(--gold-color));
+    }
+
+    .footer-desc {
+        color: #888;
+        line-height: 1.6;
+        font-size: 0.95rem;
+    }
+
+    /* Tip Box Styling (Like Screenshot) */
+    .tip-box {
+        background: rgba(212, 175, 55, 0.05);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: 30px;
+    }
+
+    .tip-header {
+        color: var(--gold-color);
+        font-weight: 800;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+
+    .tip-text {
+        color: #aaa;
+        font-size: 0.85rem;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    /* Footer Links */
+    .footer-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #fff;
+    }
+
+    .footer-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-list li {
+        margin-bottom: 15px;
+    }
+
+    .footer-list li a {
+        color: #888;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .footer-list li a:hover {
+        color: var(--gold-color);
+        padding-left: 5px;
+    }
+
+    /* Social Glow Icons (Like Screenshot) */
+    .social-container {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-glow-icon {
+        width: 45px;
+        height: 45px;
+        border: 1px solid #333;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.4s;
+    }
+
+    /* Glow Colors */
+    .ig:hover { border-color: #E1306C; box-shadow: 0 0 15px #E1306C; color: #E1306C; }
+    .in:hover { border-color: #0077b5; box-shadow: 0 0 15px #0077b5; color: #0077b5; }
+    .x:hover { border-color: #D4AF37; box-shadow: 0 0 15px #D4AF37; color: #D4AF37; }
+    .fb:hover { border-color: #1877F2; box-shadow: 0 0 15px #1877F2; color: #1877F2; }
+
+    .footer-bottom-line {
+        border-top: 1px solid #111;
+        padding-top: 30px;
+        text-align: center;
+        color: #666;
+        font-size: 0.9rem;
+    }
+</style>
+</body>
+</html>

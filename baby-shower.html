@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby Shower | Shiv Arts & Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --gold-color: #D4AF37; --dark-bg: #000000; }
+        body { background-color: var(--dark-bg); color: #fff; font-family: 'Segoe UI', sans-serif; overflow-x: hidden; }
+
+        /* --- NAVBAR --- */
+        .navbar { background-color: #0a0a0a !important; border-bottom: 2px solid var(--gold-color); padding: 10px 50px; }
+        .navbar-brand { color: var(--gold-color) !important; font-weight: 800; font-size: 1.5rem; }
+        .nav-link { color: var(--gold-color) !important; font-weight: 600; text-transform: uppercase; margin: 0 12px; }
+        .nav-link:hover, .nav-link.active { color: #fff !important; text-shadow: 0 0 8px var(--gold-color); }
+        .dropdown-menu { background-color: #000; border: 1px solid var(--gold-color); }
+        .dropdown-item { color: var(--gold-color); font-weight: 600; text-transform: uppercase; }
+        .dropdown-item:hover { background-color: var(--gold-color); color: #000; }
+
+        /* --- CONTENT --- */
+        .header { padding: 80px 0 30px; text-align: center; }
+        .gold-heading { color: var(--gold-color); font-weight: 800; font-size: 3rem; text-transform: uppercase; }
+        .carousel-item { height: 500px; }
+        .carousel-item img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; }
+        .gold-border-box { border: 2px solid var(--gold-color); padding: 50px; border-radius: 20px; background-color: #0a0a0a; text-align: center; }
+        .btn-gold { background: var(--gold-color); color: #000; font-weight: 700; padding: 12px 30px; border-radius: 50px; }
+        
+        /* --- FOOTER --- */
+        footer { background-color: #0a0a0a; border-top: 2px solid #D4AF37; padding: 50px 0 20px; color: #fff; margin-top: 80px; }
+        .hover-gold:hover { color: #D4AF37 !important; transition: 0.3s; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">SHIV ARTS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">OUR EVENTS</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="wedding.html">Wedding Planning</a></li>
+                            <li><a class="dropdown-item active" href="babyshower.html">Baby Shower</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">GALLERY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <h1 class="gold-heading">Baby Shower</h1>
+    </header>
+
+    <section class="container mb-5">
+        <div id="babySlideshow" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="1000">
+            <div class="carousel-inner">
+                <div class="carousel-item active"><img src="https://images.unsplash.com/photo-1438962136829-452260720431?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmFieSUyMHNob3dlcnxlbnwwfHwwfHx8MA%3D%3D"></div>
+                <div class="carousel-item"><img src="https://images.unsplash.com/photo-1518566585952-954bb14432d1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGJhYnklMjBzaG93ZXJ8ZW58MHx8MHx8fDA%3D"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="gold-border-box">
+            <h2 style="color: var(--gold-color);">Welcoming Your Little Miracle</h2>
+            <p class="mt-4 text-secondary lead">Elegant and gentle setups to celebrate your special arrival.</p>
+            <a href="contact.html" class="btn btn-gold mt-4">PLAN YOUR BABY SHOWER</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 style="color: #D4AF37;">SHIV ARTS & EVENTS</h5>
+                    <p class="text-secondary">Creating magical moments with elegance.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h5 style="color: #D4AF37;">QUICK LINKS</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white text-decoration-none hover-gold">Home</a></li>
+                        <li><a href="gallery.html" class="text-white text-decoration-none hover-gold">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <h5 style="color: #D4AF37;">CONTACT</h5>
+                    <p>Kanpur, Uttar Pradesh</p>
+                </div>
+            </div>
+            <hr style="border-color: #333;">
+            <p class="text-center text-secondary small">&copy; 2026 Shiv Arts & Events. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
