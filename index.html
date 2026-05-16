@@ -252,30 +252,130 @@
    target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
 </a>
-    <div class="slider-container">
-    <div class="slide active" style="background-image: url(https://i.pinimg.com/736x/88/7b/82/887b826c9e2ef54eac21180990658296.jpg);"></div>
-    <div class="slide" style="background-image: url(https://i.pinimg.com/736x/0e/ba/00/0eba00d217ce3276ef6283c114b48a9e.jpg);"></div>
-    <div class="slide" style="background-image: url(https://i.pinimg.com/736x/fc/ac/2e/fcac2e087b98abf3cbf23871dc9199c2.jpg);"></div>
-	<div class="slide" style="background-image: url(https://i.pinimg.com/736x/68/6b/f7/686bf7b14eebd964f980131d6ecc46c7.jpg);"></div>
+    <!-- =========================================================================
+    SECTION 1: HERO BACKGROUND SLIDER (With Distinct Logic & Touch Support)
+========================================================================= -->
+<div class="hero-slider-container" id="heroSliderStage">
+    <div class="hero-bg-slide h-active" style="background-image: url('https://i.pinimg.com/736x/88/7b/82/887b826c9e2ef54eac21180990658296.jpg');"></div>
+    <div class="hero-bg-slide" style="background-image: url('https://i.pinimg.com/736x/0e/ba/00/0eba00d217ce3276ef6283c114b48a9e.jpg');"></div>
+    <div class="hero-bg-slide" style="background-image: url('https://i.pinimg.com/736x/fc/ac/2e/fcac2e087b98abf3cbf23871dc9199c2.jpg');"></div>
+    <div class="hero-bg-slide" style="background-image: url('https://i.pinimg.com/736x/68/6b/f7/686bf7b14eebd964f980131d6ecc46c7.jpg');"></div>
 
-    <div class="overlay"></div>
+    <div class="hero-dark-overlay"></div>
 
-    <div class="content">
+    <div class="hero-content-box">
         <h3>We Make Your Celebration Exceptional!</h3>
         <h1>Welcome To Shiva Arts & Events</h1>
         <p>From stunning decor to anchor and entertainment that will leave your guests talking for months to come, we've got it all covered. Trust us to make your event unforgettable! Contact us today to discuss your event needs and let us show you why we are the best in the business and the best event management company in Pune PCMC.</p>
-        <a href="#" class="btn-learn">LEARN MORE</a>
+        <a href="#" class="btn-learn-more">LEARN MORE</a>
     </div>
-
-    
 </div>
 
 <style>
-    /* =========================================
-        CINEMATIC 3D CAROUSEL (9 IMAGES)
-    ========================================= */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+    /* Hero Background Slider Styles */
+    .hero-slider-container {
+        position: relative;
+        width: 100%;
+        height: 80vh; /* Scaled down slightly to fit desktop screens nicely with the carousel below */
+        min-height: 500px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+    }
+    @media (max-width: 768px) {
+        .hero-slider-container { height: 70vh; }
+    }
 
+    .hero-bg-slide {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        z-index: 1;
+        transition: opacity 1.2s ease-in-out; /* Smooth crossfade animation */
+    }
+
+    .hero-bg-slide.h-active {
+        opacity: 1;
+        z-index: 2;
+    }
+
+    .hero-dark-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.65); /* Keeps text highly legible */
+        z-index: 3;
+    }
+
+    .hero-content-box {
+        position: relative;
+        z-index: 4;
+        max-width: 850px;
+        text-align: center;
+        padding: 0 20px;
+        color: #fff;
+    }
+
+    .hero-content-box h3 {
+        color: #D4AF37;
+        font-size: 1.3rem;
+        font-weight: 400;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    .hero-content-box h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    .hero-content-box p {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #e0e0e0;
+        margin-bottom: 30px;
+    }
+
+    .btn-learn-more {
+        display: inline-block;
+        padding: 12px 35px;
+        background: transparent;
+        color: #D4AF37;
+        border: 2px solid #D4AF37;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: all 0.4s ease;
+    }
+
+    .btn-learn-more:hover {
+        background: #D4AF37;
+        color: #000;
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        transform: translateY(-3px);
+    }
+
+    @media (max-width: 768px) {
+        .hero-content-box h1 { font-size: 2.2rem; }
+        .hero-content-box h3 { font-size: 1rem; }
+        .hero-content-box p { font-size: 0.9rem; line-height: 1.6; }
+    }
+</style>
+
+
+<!-- =========================================================================
+    SECTION 2: CINEMATIC RESPONSIVE 3D CAROUSEL (9 IMAGES)
+========================================================================= -->
+<style>
     .compact-carousel-section {
         background: radial-gradient(circle at center, #1c1a17 0%, #050505 100%);
         padding: 80px 0;
@@ -284,20 +384,36 @@
         font-family: 'Poppins', sans-serif;
     }
 
-    /* Carousel Wrapper */
+    .gold-heading {
+        color: #D4AF37; 
+        font-weight: 800; 
+        letter-spacing: 5px; 
+        text-shadow: 0 0 15px rgba(212, 175, 55, 0.3); 
+        font-size: 2.4rem; 
+        margin: 0;
+    }
+    @media (max-width: 768px) {
+        .gold-heading { font-size: 1.8rem; letter-spacing: 3px; }
+    }
+
+    /* Carousel Stage Layout Wrapper */
     .carousel-stage {
         position: relative;
         width: 100%;
         max-width: 1200px;
-        height: 400px; /* Card layout space */
+        height: 400px; 
         margin: 40px auto 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        perspective: 1600px; /* Enhanced 3D depth */
+        perspective: 1600px; 
+        touch-action: pan-y;
+    }
+    @media (max-width: 768px) {
+        .carousel-stage { height: 340px; margin: 25px auto 0; }
     }
 
-    /* Premium Cards Base styling */
+    /* Premium 3D Cards Base styling */
     .carousel-track-card {
         position: absolute;
         width: 280px; 
@@ -306,8 +422,6 @@
         border: 2px solid #1a1a1a;
         background: #0d0d0d;
         overflow: hidden;
-        
-        /* High-end transitions with custom cubic-bezier for snappy mechanical rotation */
         transition: transform 0.85s cubic-bezier(0.34, 1.56, 0.64, 1), 
                     opacity 0.85s ease, 
                     border-color 0.5s ease, 
@@ -316,6 +430,9 @@
         cursor: pointer;
         user-select: none;
     }
+    @media (max-width: 768px) {
+        .carousel-track-card { width: 210px; height: 270px; border-radius: 15px; }
+    }
 
     .carousel-track-card img {
         width: 100%;
@@ -323,6 +440,9 @@
         object-fit: cover;
         filter: brightness(0.3) grayscale(60%);
         transition: filter 0.6s ease, transform 0.6s ease;
+    }
+    @media (max-width: 768px) {
+        .carousel-track-card img { height: 210px; }
     }
 
     .carousel-card-title {
@@ -341,12 +461,11 @@
         border-top: 1px solid #161616;
         transition: color 0.4s ease, letter-spacing 0.4s ease;
     }
+    @media (max-width: 768px) {
+        .carousel-card-title { height: 60px; font-size: 0.75rem; letter-spacing: 1px; padding: 0 10px; }
+    }
 
-    /* =========================================
-        DYNAMIC 3D TRANSITION STATES
-    ========================================= */
-    
-    /* CENTER CARD: Glow, Scale up, Pop Front */
+    /* DYNAMIC 3D STATES */
     .pos-center {
         transform: translate3d(0, 0, 220px) scale(1.1);
         z-index: 5;
@@ -354,166 +473,177 @@
         box-shadow: 0 15px 45px rgba(212, 175, 55, 0.35);
         opacity: 1;
     }
-    .pos-center img { 
-        filter: brightness(1) grayscale(0%); 
-    }
-    .pos-center .carousel-card-title {
-        color: #D4AF37;
-    }
+    .pos-center img { filter: brightness(1) grayscale(0%); }
+    .pos-center .carousel-card-title { color: #D4AF37; }
     
-    /* Center Card Hover Effect */
-    .pos-center:hover {
-        transform: translate3d(0, -12px, 250px) scale(1.12);
-        box-shadow: 0 25px 55px rgba(212, 175, 55, 0.55);
-    }
-    .pos-center:hover .carousel-card-title {
-        letter-spacing: 2.5px;
+    @media (min-width: 992px) {
+        .pos-center:hover { transform: translate3d(0, -12px, 250px) scale(1.12); box-shadow: 0 25px 55px rgba(212, 175, 55, 0.55); }
+        .pos-center:hover .carousel-card-title { letter-spacing: 2.5px; }
     }
 
-    /* LEFT CARD: Flipped & pushed back */
-    .pos-left {
-        transform: translate3d(-340px, 0, -80px) rotateY(32deg) scale(0.85);
-        z-index: 3;
-        opacity: 0.45;
-        border-color: #262626;
+    .pos-left { transform: translate3d(-340px, 0, -80px) rotateY(32deg) scale(0.85); z-index: 3; opacity: 0.45; border-color: #262626; }
+    .pos-right { transform: translate3d(340px, 0, -80px) rotateY(-32deg) scale(0.85); z-index: 3; opacity: 0.45; border-color: #262626; }
+
+    @media (max-width: 992px) and (min-width: 769px) {
+        .pos-left { transform: translate3d(-240px, 0, -60px) rotateY(25deg) scale(0.85); }
+        .pos-right { transform: translate3d(240px, 0, -60px) rotateY(-25deg) scale(0.85); }
     }
 
-    /* RIGHT CARD: Mirror flip to the right */
-    .pos-right {
-        transform: translate3d(340px, 0, -80px) rotateY(-32deg) scale(0.85);
-        z-index: 3;
-        opacity: 0.45;
-        border-color: #262626;
+    @media (max-width: 768px) {
+        .pos-center { transform: translate3d(0, 0, 100px) scale(1.05); }
+        .pos-left { transform: translate3d(-140px, 0, -50px) rotateY(20deg) scale(0.8); opacity: 0.25; }
+        .pos-right { transform: translate3d(140px, 0, -50px) rotateY(-20deg) scale(0.8); opacity: 0.25; }
     }
 
-    /* HIDDEN CARDS: Out of sight loop pool */
-    .pos-hidden {
-        transform: translate3d(0, 0, -450px) scale(0.5);
-        z-index: 1;
-        opacity: 0;
-        pointer-events: none;
-    }
+    .pos-hidden { transform: translate3d(0, 0, -450px) scale(0.5); z-index: 1; opacity: 0; pointer-events: none; }
 
-    /* Navigation Controllers */
+    /* Nav Controllers */
     .carousel-arrow {
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 55px;
-        height: 55px;
-        background: rgba(212, 175, 55, 0.04);
-        border: 2px solid rgba(212, 175, 55, 0.4);
-        color: #D4AF37;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        z-index: 10;
-        font-size: 1.3rem;
-        transition: all 0.4s ease;
+        top: 50%; transform: translateY(-50%);
+        width: 55px; height: 55px;
+        background: rgba(212, 175, 55, 0.04); border: 2px solid rgba(212, 175, 55, 0.4);
+        color: #D4AF37; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        cursor: pointer; z-index: 10; font-size: 1.3rem; transition: all 0.4s ease;
     }
-    .carousel-arrow:hover {
-        background: #D4AF37;
-        color: #000;
-        box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
-        border-color: #D4AF37;
-        transform: translateY(-50%) scale(1.15);
-    }
+    .carousel-arrow:hover { background: #D4AF37; color: #000; box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); border-color: #D4AF37; transform: translateY(-50%) scale(1.15); }
     .arrow-left { left: 25px; }
     .arrow-right { right: 25px; }
+
+    @media (max-width: 576px) {
+        .carousel-arrow { width: 42px; height: 42px; font-size: 1rem; }
+        .arrow-left { left: 8px; } .arrow-right { right: 8px; }
+    }
 </style>
 
 <section class="compact-carousel-section">
     <div class="container-fluid position-relative">
-        
-        <!-- Header Heading -->
         <div class="text-center">
-            <h2 class="gold-heading" style="color: #D4AF37; font-weight: 800; letter-spacing: 5px; text-shadow: 0 0 15px rgba(212, 175, 55, 0.3); font-size: 2.4rem; margin: 0;">OUR EXCLUSIVE EVENTS</h2>
+            <h2 class="gold-heading">OUR EXCLUSIVE EVENTS</h2>
             <div style="width: 90px; height: 3px; background: #D4AF37; margin: 15px auto 0; border-radius: 2px;"></div>
         </div>
 
-        <div class="carousel-stage">
-            
-            <!-- Controls -->
-            <div class="carousel-arrow arrow-left" onclick="handleUserClick(-1)">❮</div>
-            <div class="carousel-arrow arrow-right" onclick="handleUserClick(1)">❯</div>
+        <div class="carousel-stage" id="event3DStage">
+            <div class="carousel-arrow arrow-left" onclick="handle3DUserClick(-1)">❮</div>
+            <div class="carousel-arrow arrow-right" onclick="handle3DUserClick(1)">❯</div>
 
             <!-- CARD 1 -->
             <div class="carousel-track-card">
                 <img src="https://i.pinimg.com/1200x/8b/8b/e7/8b8be79a6b280bd627382dd623d235b5.jpg" alt="Birthday">
                 <div class="carousel-card-title">Birthday Celebration</div>
             </div>
-
             <!-- CARD 2 -->
             <div class="carousel-track-card">
                 <img src="https://i.pinimg.com/736x/e4/aa/09/e4aa09775d90db9cf6bc4e258c8ae7a8.jpg" alt="Wedding">
                 <div class="carousel-card-title">Wedding Decoration</div>
             </div>
-
             <!-- CARD 3 -->
             <div class="carousel-track-card">
-                <img src="https://i.pinimg.com/1200x/17/59/b8/1759b838d8616ff2e8de86000892f745.jpg" alt="Corporate">
+                <img src="https://i.pinimg.com/1200x/17/59/b8/1759b838d8616ff2e8de86000892f745.jpg" alt="Bridal Entry">
                 <div class="carousel-card-title">Bridal Entry</div>
             </div>
-
             <!-- CARD 4 -->
             <div class="carousel-track-card">
                 <img src="https://i.pinimg.com/736x/0d/7a/12/0d7a12e5b3bc561b7ecb072ab64a911a.jpg" alt="Baby">
                 <div class="carousel-card-title">Baby Shower</div>
             </div>
-
             <!-- CARD 5 -->
             <div class="carousel-track-card">
                 <img src="https://i.pinimg.com/736x/ec/18/71/ec18719cc74862987ac192d83bcfdee0.jpg" alt="Anniversary">
                 <div class="carousel-card-title">Anniversary Event</div>
             </div>
-
             <!-- CARD 6 -->
             <div class="carousel-track-card">
-                <img src="https://i.pinimg.com/1200x/23/34/a6/2334a6a4e6b24668a7d6205d924218ea.jpg" alt="Engagement">
+                <img src="https://i.pinimg.com/1200x/23/34/a6/2334a6a4e6b24668a7d6205d924218ea.jpg" alt="Traditional">
                 <div class="carousel-card-title">Festive & Traditional Events</div>
             </div>
-
             <!-- CARD 7 -->
             <div class="carousel-track-card">
-                <img src="https://i.pinimg.com/736x/80/22/50/8022506379cd94c43b22225c71344f76.jpg" alt="Theme Party">
+                <img src="https://i.pinimg.com/736x/80/22/50/8022506379cd94c43b22225c71344f76.jpg" alt="Professional">
                 <div class="carousel-card-title">Professional Events</div>
             </div>
-
             <!-- CARD 8 -->
             <div class="carousel-track-card">
-                <img src="https://i.pinimg.com/736x/c6/fc/86/c6fc86caf142df408afdcbfb00fd0041.jpg" alt="Reception">
+                <img src="https://i.pinimg.com/736x/c6/fc/86/c6fc86caf142df408afdcbfb00fd0041.jpg" alt="Haldi">
                 <div class="carousel-card-title">Haldi Ceremony</div>
             </div>
-
             <!-- CARD 9 -->
             <div class="carousel-track-card">
-                <img src="https://i.pinimg.com/736x/47/b6/6f/47b66fdbaaea7f28ce4a4bdac9469717.jpg" alt="PreWedding">
+                <img src="https://i.pinimg.com/736x/47/b6/6f/47b66fdbaaea7f28ce4a4bdac9469717.jpg" alt="Engagement">
                 <div class="carousel-card-title">Engagement Ceremony</div>
             </div>
-
         </div>
     </div>
 </section>
 
-<script>
-    let trackCards = document.querySelectorAll('.carousel-track-card');
-    let totalCards = trackCards.length;
-    let currentActive = 1; // Pivot starting item (Wedding)
-    let autoPlayTimer;
 
-    // Core 3D Positioning Engine
+<!-- =========================================================================
+    UNIFIED JAVASCRIPT CONTROLLER (NO CONFLICT ENGINE)
+========================================================================= -->
+<script>
+    // -------------------------------------------------------------
+    // ENGINE 1: HERO SLIDER LOGIC
+    // -------------------------------------------------------------
+    const heroSlides = document.querySelectorAll('.hero-bg-slide');
+    let currentHeroIndex = 0;
+    let heroTimer;
+
+    function changeHeroSlide(nextIndex) {
+        heroSlides[currentHeroIndex].classList.remove('h-active');
+        if (typeof nextIndex === 'number') {
+            currentHeroIndex = (nextIndex + heroSlides.length) % heroSlides.length;
+        } else {
+            currentHeroIndex = (currentHeroIndex + 1) % heroSlides.length;
+        }
+        heroSlides[currentHeroIndex].classList.add('h-active');
+    }
+
+    function startHeroAutoplay() {
+        clearInterval(heroTimer);
+        heroTimer = setInterval(() => {
+            changeHeroSlide();
+        }, 4000); // 4 Seconds crossfade
+    }
+    
+    // Swipe Logic for Hero Section
+    let heroStartX = 0;
+    const heroContainer = document.getElementById('heroSliderStage');
+    
+    heroContainer.addEventListener('touchstart', (e) => {
+        heroStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    heroContainer.addEventListener('touchend', (e) => {
+        let diff = e.changedTouches[0].screenX - heroStartX;
+        if (Math.abs(diff) > 50) {
+            clearInterval(heroTimer);
+            changeHeroSlide(diff > 0 ? currentHeroIndex - 1 : currentHeroIndex + 1);
+            startHeroAutoplay();
+        }
+    }, { passive: true });
+
+    // Initialize Hero Slider
+    startHeroAutoplay();
+
+
+    // -------------------------------------------------------------
+    // ENGINE 2: 3D CAROUSEL LOGIC
+    // -------------------------------------------------------------
+    const cards3D = document.querySelectorAll('.carousel-track-card');
+    const total3DCards = cards3D.length;
+    let current3DActive = 1; // Center item on start
+    let carousel3DTimer;
+
     function update3DCarousel(direction) {
-        currentActive = (currentActive + direction + totalCards) % totalCards;
+        current3DActive = (current3DActive + direction + total3DCards) % total3DCards;
         
-        trackCards.forEach((card, index) => {
-            // Assign spatial anchors mathematically dynamically based on 9 items loop
-            if (index === currentActive) {
+        cards3D.forEach((card, index) => {
+            if (index === current3DActive) {
                 card.className = 'carousel-track-card pos-center';
-            } else if (index === (currentActive - 1 + totalCards) % totalCards) {
+            } else if (index === (current3DActive - 1 + total3DCards) % total3DCards) {
                 card.className = 'carousel-track-card pos-left';
-            } else if (index === (currentActive + 1) % totalCards) {
+            } else if (index === (current3DActive + 1) % total3DCards) {
                 card.className = 'carousel-track-card pos-right';
             } else {
                 card.className = 'carousel-track-card pos-hidden';
@@ -521,23 +651,37 @@
         });
     }
 
-    // Auto Play Sequence Loop
-    function startAutoPlay() {
-        autoPlayTimer = setInterval(() => {
+    function start3DAutoplay() {
+        clearInterval(carousel3DTimer);
+        carousel3DTimer = setInterval(() => {
             update3DCarousel(1);
-        }, 3200); // 3.2 Seconds Rotation Loop
+        }, 3500); // 3.5 Seconds flip loop
     }
 
-    // User interaction safe handler
-    function handleUserClick(direction) {
-        clearInterval(autoPlayTimer); 
+    function handle3DUserClick(direction) {
+        clearInterval(carousel3DTimer);
         update3DCarousel(direction);
-        startAutoPlay(); // Secure restart
+        start3DAutoplay();
     }
 
-    // Run setup on load
+    // Swipe Logic for 3D Carousel Section
+    let carouselStartX = 0;
+    const carouselStage = document.getElementById('event3DStage');
+
+    carouselStage.addEventListener('touchstart', (e) => {
+        carouselStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carouselStage.addEventListener('touchend', (e) => {
+        let diff = e.changedTouches[0].screenX - carouselStartX;
+        if (Math.abs(diff) > 50) {
+            handle3DUserClick(diff > 0 ? -1 : 1);
+        }
+    }, { passive: true });
+
+    // Initialize 3D Carousel
     update3DCarousel(0);
-    startAutoPlay();
+    start3DAutoplay();
 </script>
 
 <section class="about-section py-5">
